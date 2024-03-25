@@ -9,28 +9,28 @@ App is made as a Capstone Project from a Web Development Course using my current
 ## Stack:
 ### Frontend :
 
--CSS and EJS
--Bootstrap and flexbox 
+- CSS and EJS
+- Bootstrap and flexbox 
 
 ### Backend:
 
--Node.js
--Express.js
+- Node.js
+- Express.js
 
 ## Functionalities:
 
---Creating Posts
---Viewing and editing posts
---Deleting posts
---Blog text saved as .txt files 
+- Creating Posts
+- Viewing and editing posts
+- Deleting posts
+- Blog text saved as .txt files 
 
 ---
 
 ## Planned future functionalities:
 
--Database
-	-User register and login 
-	-Persistance storage of posts
--Frontend
-	-React.js (Could be a Rework of this project instead of an update)
+- Database
+	- User register and login 
+	- Persistance storage of posts
+- Frontend
+	- React.js (Could be a Rework of this project instead of an update)
 
