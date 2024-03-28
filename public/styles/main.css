@@ -1,31 +1,80 @@
 /* Color pallete
-main color: 37306B
-second: 66347F
-accent1:    9E4784
-accent2:    D27685 */
+main color: EFBC9B
+second: FBF3D5
+accent1:    D6DAC8
+accent2:    9CAFAA */
 
 
 body{
-    background-color: #37306B;
+    background-color: #FBF3D5;
     
 }
-main{
-    height: 100vh;
-}
+
+
+/* bootstrap navigation bar */
 #bootstrap-navbar{
-    background-color: #66347F;
+    background-color: #9CAFAA;
     max-width: none;
 }
 
-.navbar-text{
-  color: #D27685;
+a:hover,a:focus{
+  color: #EFBC9B !important;
 }
 
+
+.navbar-text{
+  color: #D6DAC8;
+  font-size: 25px;
+}
+a.myLogo{
+  color: #EFBC9B;
+  font-size: 25px;
+}
+/* main */
+main .myContainer{
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 2fr 2fr;
+  grid-template-rows: 1fr 1fr ;
+}
+.sidebar{
+    grid-row: 1/-1;
+    
+}
+.post{
+  margin:15px;
+  background-color: #FBF3D5;
+  border: 2px solid #EFBC9B;
+  
+  
+}
+
+.post a{
+  color: #EFBC9B;
+  width: 40%;
+  align-self: center;
+  
+}
+.post a:hover, .post a:focus{
+  background-color: #9CAFAA;
+  color: white !important;
+}
+
+
 footer{
-  background-color: #66347F;
+  background-color: #9CAFAA;
   margin: 0;
   padding: 30px;
   padding-bottom: 10px;
   padding-top: 20px;
   
+}
+
+
+@media (max-width:992px ){
+  main .myContainer{
+    height: auto;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+  }
 }
