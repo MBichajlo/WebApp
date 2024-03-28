@@ -10,10 +10,7 @@ app.use(express.static("public"));
 app.use(morgan("tiny"));
 
 app.get("/", (req, res) => {
-  res.render("partials/header.ejs");
-});
-app.get("/?", (req, res) => {
-  res.send("<h1>123</h1>");
+  res.render("index.ejs");
 });
 
 app.listen(port, () => {

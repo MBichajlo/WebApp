@@ -1,0 +1,31 @@
+/* Color pallete
+main color: 37306B
+second: 66347F
+accent1:    9E4784
+accent2:    D27685 */
+
+
+body{
+    background-color: #37306B;
+    
+}
+main{
+    height: 100vh;
+}
+#bootstrap-navbar{
+    background-color: #66347F;
+    max-width: none;
+}
+
+.navbar-text{
+  color: #D27685;
+}
+
+footer{
+  background-color: #66347F;
+  margin: 0;
+  padding: 30px;
+  padding-bottom: 10px;
+  padding-top: 20px;
+  
+}
