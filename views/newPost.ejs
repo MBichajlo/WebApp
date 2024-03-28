@@ -1,5 +1,12 @@
 <%- include("partials/header.ejs") %>
-    <main></main>
-    </body>
+    <main>
+        <div>
+            <form class="form-container" action="/save" method="POST">
+                <input type="text" name="title" placeholder="New post name...">
+                <textarea name="postText" id="postText" rows="20"></textarea>
+                <button> Post!</button>
+            </form>
+        </div>
+    </main>
 
-    </html>
+    <%- include("partials/footer.ejs") %>

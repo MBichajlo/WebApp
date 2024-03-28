@@ -60,6 +60,33 @@ main .myContainer{
   color: white !important;
 }
 
+/* form  */
+.form-container{
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 100vh;
+  padding: 50px;
+}
+
+.form-container *{
+  border: 3px solid #EFBC9B;
+  border-radius: 10px;
+  width: 85%;
+}
+
+.form-container input{
+  width: 30%;
+  text-align: center;
+}
+
+.form-container button{
+  width: 30%;
+  background-color: #FBF3D5;
+}
+
 
 footer{
   background-color: #9CAFAA;

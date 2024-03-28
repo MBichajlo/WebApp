@@ -1,7 +1,15 @@
 <%- include("partials/header.ejs") %>
     <main>
         <div class="myContainer">
-            <div class="sidebar"> </div>
+            <div class="sidebar">
+                <ul>
+                    <% if (locals.posts){posts.forEach(element=> { %>
+                        <li><a href="/post?<%= element %>">
+                                <%= element %>
+                            </a></li>
+                        <% })} %>
+                </ul>
+            </div>
             <div class="card post number1">
                 <h5 class="card-title m-3">Title</h5>
                 <div class="card-body">
