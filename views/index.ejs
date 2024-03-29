@@ -1,8 +1,9 @@
 <%- include("partials/header.ejs") %>
     <main>
         <div class="myContainer">
+
             <div class="sidebar">
-                <ul>
+                <ul class="posts-list">
                     <% if (locals.posts){posts.forEach(element=> { %>
                         <li><a href="/post?<%= element %>">
                                 <%= element %>
@@ -13,11 +14,13 @@
             <% randomPosts.forEach(element=> { %>
                 <% if (element) { %>
                     <div class="card post number1">
-                        <h5 class="card-title m-3">
+                        <h3 class="card-title m-3">
                             <%=element.name%>
-                        </h5>
+                        </h3>
                         <div class="card-body">
-                            <%=element.data%>
+                            <p>
+                                <%=element.data%>
+                            </p>
                         </div>
                         <a class="btn mb-3 " href="/post?<%= element.name%>">Read full post</a>
                     </div>

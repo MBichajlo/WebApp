@@ -3,32 +3,48 @@ main color: EFBC9B
 second: FBF3D5
 accent1:    D6DAC8
 accent2:    9CAFAA */
+:root{
+  --light-green:#606C38;
+  --dark-green:#283618;
+  --beige:#FEFAE0;
+  --light-orange:#DDA15E;
+  --dark-orange:#BC6C25;
+
+  --serif:"Suranna";  
+  --sans-serif:"Inter"
+}
+
 
 
 body{
-    background-color: #FBF3D5;
+    background-color: var(--beige);
     
 }
 
 
 /* bootstrap navigation bar */
 #bootstrap-navbar{
-    background-color: #9CAFAA;
+    background-color:var(--dark-green);
     max-width: none;
 }
 
 a:hover,a:focus{
-  color: #EFBC9B !important;
+  color: var(--dark-orange) !important;
 }
 
+svg.bi{
+  fill: var(--dark-orange) !important;
+}
 
 .navbar-text{
-  color: #D6DAC8;
+  color: var(--beige);
   font-size: 25px;
+  font-family: var(--serif)
 }
 a.myLogo{
-  color: #EFBC9B;
+  color: var(--beige);
   font-size: 25px;
+  font-family: var(--serif)
 }
 /* main */
 main .myContainer{
@@ -43,21 +59,55 @@ main .myContainer{
 }
 .post{
   margin:15px;
-  background-color: #FBF3D5;
-  border: 2px solid #EFBC9B;
-  
-  
+  background-color: #fffcef;;
+  /* background-color: var(--beige); */
+  border: 2px solid var(--light-green);
 }
 
 .post a{
-  color: #EFBC9B;
+  color: var(--light-green);
   width: 40%;
   align-self: center;
+  font-family: var(--sans-serif);
   
 }
 .post a:hover, .post a:focus{
-  background-color: #9CAFAA;
-  color: white !important;
+  background-color: var(--light-green);
+  color: var(--beige) !important;
+}
+
+h3{
+  color: var(--dark-orange)!important;
+  font-family: var(--serif);
+}
+p{
+  color: var(--dark-green) !important;
+  font-family: var(--sans-serif);
+  
+}
+
+.posts-list{
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 20px;
+  
+}
+
+.posts-list a{
+  text-decoration: none;
+  color: var(--light-green);
+  font-family: var(--serif);
+  font-size: 20px
+ 
+}
+.posts-list li{
+  border: 2px solid var(--light-green);
+  width: 100%;
+  padding: 5px;
+  border-radius: 10px;
+  background-color: #fffcef;
 }
 
 /* form  */
