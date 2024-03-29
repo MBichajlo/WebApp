@@ -87,6 +87,20 @@ main .myContainer{
   background-color: #FBF3D5;
 }
 
+/* post  */
+.post-container{
+  margin: 20px;
+}
+
+.editor-buttons{
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+  gap: 20px;
+}
+.editor-buttons a{
+  color: #9CAFAA;
+}
 
 footer{
   background-color: #9CAFAA;

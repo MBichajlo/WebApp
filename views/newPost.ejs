@@ -1,11 +1,23 @@
 <%- include("partials/header.ejs") %>
     <main>
         <div>
-            <form class="form-container" action="/save" method="POST">
-                <input type="text" name="title" placeholder="New post name...">
-                <textarea name="postText" id="postText" rows="20"></textarea>
-                <button> Post!</button>
-            </form>
+            <% if (locals.postName && locals.postText) { %>
+                <form class="form-container" action="/save" method="POST">
+                    <input type="text" name="title" value="<%= postName %>">
+                    <input type="hidden" name="_METHOD" value="PUT" />
+                    <textarea name="postEditedText" id="postEditedText" rows="20">
+                        <%= postText %>
+                    </textarea>
+                    <button> Post!</button>
+                </form>
+                <% }else{%>
+                    <form class="form-container" action="/save" method="POST">
+                        <input type="hidden" name="_METHOD" value="POST" />
+                        <input type="text" name="title" placeholder="New post name...">
+                        <textarea name="postText" id="postText" rows="20"></textarea>
+                        <button> Post!</button>
+                    </form>
+                    <% } %>
         </div>
     </main>
 
