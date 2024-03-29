@@ -1,3 +1,5 @@
 $(".dlt-btn").on("click", function (item) {
-  axios.delete(`/delete-post?${this.id}`);
+  if (confirm("Do you want to delete this post?")) {
+    axios.delete(`/delete-post?${this.id}`);
+  }
 });

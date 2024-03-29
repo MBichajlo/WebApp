@@ -24,14 +24,54 @@ app.get("/", (req, res) => {
     filteredFiles.forEach((element) => {
       newFiles.push(element.slice(0, -4));
     });
+    var randomPosts = [];
+    var rPost = "";
+    if (newFiles.length > 4) {
+      for (let i = 0; i < 4; i++) {
+        do {
+          rPost = newFiles[Math.floor(Math.random() * newFiles.length)];
+        } while (randomPosts.includes(rPost));
+        randomPosts.push(rPost);
+      }
+    } else {
+      randomPosts = newFiles;
+    }
+    var posts = [];
+    randomPosts.forEach((element) => {
+      let newPost = {
+        name: element,
+        data:
+          fs
+            .readFileSync(`public/assets/posts/${element}.txt`, {
+              encoding: "utf-8",
+            })
+            .substring(0, 500) + "...",
+      };
+      posts.push(newPost);
+    });
+    console.log(posts);
     res.render("index.ejs", {
       posts: newFiles,
+      randomPosts: posts,
     });
   });
 });
 
 app.get("/random-post", (req, res) => {
-  res.redirect("/post");
+  fs.readdir("public/assets/posts", (err, files) => {
+    if (err) throw err;
+    var fFiles = files.filter((e) => {
+      return path.extname(e).toLowerCase() === ".txt";
+    });
+    let rFile = fFiles[Math.floor(Math.random() * fFiles.length)];
+    fs.readFile(`public/assets/posts/${rFile}`, "utf-8", (err, data) => {
+      if (err) throw err;
+      res.render("post.ejs", {
+        postName: rFile.slice(0, -4),
+        postText: data,
+      });
+    });
+  });
 });
 
 app.get("/post", (req, res) => {
