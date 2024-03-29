@@ -24,7 +24,6 @@ app.get("/", (req, res) => {
     filteredFiles.forEach((element) => {
       newFiles.push(element.slice(0, -4));
     });
-    console.log(newFiles);
     res.render("index.ejs", {
       posts: newFiles,
     });
@@ -92,8 +91,50 @@ app.post("/save", (req, res) => {
       }
     );
   } else if (req.body["_METHOD"] === "PUT") {
-    res.send("<h1> put request</h1>");
+    let postNewTitle = req.body["postEditedTitle"];
+    let postNewText = req.body["postEditedText"];
+    let postOldTitle = req.body["_title"];
+    let postOldText = req.body["_postText"];
+    if (postNewTitle.trimEnd() === postOldTitle) {
+      fs.writeFile(
+        `public/assets/posts/${postOldTitle.trimEnd()}.txt`,
+        postNewText,
+        "utf-8",
+        (err) => {
+          if (err) throw err;
+          res.render("postSaved.ejs");
+        }
+      );
+    } else {
+      fs.rename(
+        `public/assets/posts/${postOldTitle}.txt`,
+        `public/assets/posts/${postNewTitle}.txt`,
+        () => {
+          fs.writeFile(
+            `public/assets/posts/${postNewTitle}.txt`,
+            postNewText,
+            "utf-8",
+            (err) => {
+              if (err) throw err;
+              res.render("postSaved.ejs");
+            }
+          );
+        }
+      );
+    }
   }
+});
+
+app.delete("/delete-post", (req, res) => {
+  const link = req.url.split("?");
+
+  if (link[1]) {
+    const postName = link[1].replace(/%20/g, " ");
+    fs.rm(`public/assets/posts/${postName}.txt`, (err) => {
+      if (err) throw err;
+    });
+  }
+  res.send("s");
 });
 
 app.listen(port, () => {

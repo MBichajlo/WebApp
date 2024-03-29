@@ -3,8 +3,10 @@
         <div>
             <% if (locals.postName && locals.postText) { %>
                 <form class="form-container" action="/save" method="POST">
-                    <input type="text" name="title" value="<%= postName %>">
+                    <input type="text" name="postEditedTitle" value="<%= postName %>">
                     <input type="hidden" name="_METHOD" value="PUT" />
+                    <input type="hidden" name="_title" value="<%= postName %>">
+                    <input type="hidden" name="_postText" value="<%= postText %>">
                     <textarea name="postEditedText" id="postEditedText" rows="20">
                         <%= postText %>
                     </textarea>
