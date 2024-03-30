@@ -28,7 +28,7 @@ body{
     max-width: none;
 }
 
-a:hover,a:focus{
+#bootstrap-navbar a:hover,a:focus{
   color: var(--dark-orange) !important;
 }
 
@@ -119,53 +119,130 @@ p{
   align-items: center;
   min-height: 100vh;
   padding: 50px;
+  gap: 20px;
 }
 
 .form-container *{
-  border: 3px solid #EFBC9B;
+  border: 3px solid var(--light-green);
   border-radius: 10px;
   width: 85%;
+  background-color: #fffcef;
+  font-family: var(--sans-serif);
+  color: var(--dark-green);
+  font-size: 20px;
 }
 
 .form-container input{
   width: 30%;
   text-align: center;
+  font-family: var(--serif);
+  font-size: 25px;
+  color: var(--dark-green);
 }
 
 .form-container button{
   width: 30%;
-  background-color: #FBF3D5;
+  background-color: #fffcef;
+}
+.form-container button:hover{
+  width: 30%;
+  background-color: var(--light-green);
+  border: 3px solid var(--dark-green);
+  color: var(--beige);
+  
 }
 
 /* post  */
 .post-container{
   margin: 20px;
+  min-height: 100vh;
 }
+.post-container h1{
+  font-family: var(--serif);
+  color: var(--dark-orange);
+  
+}
+
+.post-container p{
+  font-family: var(--sans-serif);
+  color: var(--dark-green);
+}
+
+
 
 .editor-buttons{
   display: flex;
   flex-direction: row;
   justify-content: end;
   gap: 20px;
+  
 }
+
 .editor-buttons a{
-  color: #9CAFAA;
+  
+  padding: 10px;
+  border-radius: 5px;
+  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out;
+}
+
+.editor-buttons a:hover{
+  background-color: var(--light-green);
+ 
+}
+.editor-buttons a:hover svg{
+  fill: var(--beige) !important  ;
 }
 
 footer{
-  background-color: #9CAFAA;
+  background-color: var(--dark-green);
   margin: 0;
   padding: 30px;
   padding-bottom: 10px;
   padding-top: 20px;
+  text-align: center;
   
 }
+footer h5{
+  color: var(--beige);
+  font-family: var(--serif);
+}
+
+.contact-page{
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left;
+  align-items: center;
+  min-height: 100vh;
+  padding: 50px;
+}
+.contact-page h2{
+  margin: 20px;
+  font-family: var(--serif);
+  color: var(--dark-green);
+  
+  
+}
+
 
 
 @media (max-width:992px ){
   main .myContainer{
     height: auto;
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1 fr 1fr 1fr 1fr 1fr;
+  }
+  .posts-list{
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    padding: 0;
+  }
+  .form-container {
+    padding: 30px 0px;
+  }
+  .form-container input{
+    width: 90%;
   }
 }
